@@ -87,6 +87,7 @@ function DefaultProjectCard({ image, title, description, action }) {
               color="black"
               sx={{
                 gap: 3,
+                marginBottom: 3,
               }}
             >
               Register

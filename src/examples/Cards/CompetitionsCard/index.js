@@ -4,7 +4,7 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import MDButton from "components/MDButton";
+// import MDButton from "components/MDButton";
 import useWindowDimensions from "hooks/useWindowDimensions";
 
 function CompetitionCard({ image, label, title, description, action}) {
@@ -13,6 +13,7 @@ function CompetitionCard({ image, label, title, description, action}) {
   if(width<1096 )
   {
     displayType="column"
+
   }
   else
   {
@@ -30,6 +31,7 @@ function CompetitionCard({ image, label, title, description, action}) {
         overflow: "visible",
       }}
     >
+      < div style={{ display:'flex', justifyContent:'center' }}>
         <CardMedia
           src={image}
           component="img"
@@ -42,10 +44,8 @@ function CompetitionCard({ image, label, title, description, action}) {
             objectPosition: "center",
           }}
         />
+        </div>
       <MDBox mt={1} mx={0.5}>
-        <MDTypography variant="button" fontWeight="regular" color="text" textTransform="capitalize">
-          {label}
-        </MDTypography>
         <MDBox mb={1}>
           {action.type === "internal" ? (
             <MDTypography
@@ -68,22 +68,21 @@ function CompetitionCard({ image, label, title, description, action}) {
               {title}
             </MDTypography>
           )}
+          <br/>
+                  <MDTypography variant="button" fontWeight="regular" color="text" textTransform="capitalize">
+          {label}
+        </MDTypography>
         </MDBox>
         <MDBox mb={3} lineHeight={0} >
           <MDTypography variant="button" fontWeight="light" color="text">
             {description}
           </MDTypography>
-            <MDButton
-              component="a"
-              target="_blank"
-              color={action.color}
-              rel="noreferrer"
-              variant="outlined"
-              size="small"
-              href={action.route}
+           <MDTypography variant="button" fontWeight="light" color="info">
+            <a href="/codigo"
             >
               Learn More
-            </MDButton>
+            </a>
+            </MDTypography>
         </MDBox>
       </MDBox>
     </Card>

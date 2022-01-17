@@ -132,7 +132,7 @@ function DataTable({
   }
 
   return (
-    <TableContainer sx={{ boxShadow: "none" }}>
+    <TableContainer sx={{ boxShadow: "none", gap:3 }}>
       {entriesPerPage || canSearch ? (
         <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
           {entriesPerPage && (
