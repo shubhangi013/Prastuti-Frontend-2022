@@ -3,7 +3,7 @@
 // Images
 import kal from "assets/images/kal-visuals-square.jpg";
 
-export default [
+const profiles= [
   {
     image: kal,
     name: "Anshuman Srivastava",
@@ -24,3 +24,4 @@ export default [
   },
 
 ];
+export default profiles;

@@ -22,13 +22,24 @@ import MDAvatar from "components/MDAvatar";
 
 
 function ProfilesList({ title, profiles, shadow }) {
+
+//   function toggleDisplay(key){
+//   const x = document.getElementsByClassName(key);
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// }
+  
+
   const renderProfiles = profiles.map(({ image, name, description }) => (
     <div>
-    <MDBox key={name} component="li" display="flex" alignItems="center" py={2} mb={1} >
+    <MDBox key={name} component="li" alignItems="center" py={2} mb={1} className={name}>
       <MDBox mr={2}>
         <MDAvatar src={image} alt="something here" shadow="md" />
       </MDBox>
-      <MDBox display="flex" flexDirection="column" alignItems="flex-start" justifyContent="center" px={2} r={3} >
+      <MDBox  flexDirection="column" alignItems="flex-start" justifyContent="center" px={2} r={3} display="flex" >
         <MDTypography variant="button" fontWeight="medium">
           {name}
         </MDTypography>
@@ -37,17 +48,14 @@ function ProfilesList({ title, profiles, shadow }) {
         </MDTypography>
       </MDBox>
 
-
-
-
-  </MDBox>
   <Stack spacing={1} direction="row" >
   <Button variant="contained" color="success" size="small"   sx={{
       border: "2px green solid"
-    }} startIcon={<DoneIcon />}>Accept</Button>
+    }} startIcon={<DoneIcon />} key={name} >Accept</Button>
 
-  <Button variant="contained" color="success" size="small"  sx={{ border: "2px red solid" }} startIcon={<DeleteIcon />}>Decline</Button>
+  <Button variant="contained" color="success" size="small"  sx={{ border: "2px red solid" }} startIcon={<DeleteIcon />} key={name}>Decline</Button>
  </Stack>
+   </MDBox>
    </div>
 
   ));
