@@ -23,7 +23,7 @@ import "./competitionpage.css";
 
 
 
-function DefaultProjectCard({ title, description }) {
+function DefaultProjectCard({ title, description, action }) {
 
   const { width } = useWindowDimensions();
   let PaddingLeft
@@ -138,7 +138,7 @@ function DefaultProjectCard({ title, description }) {
         <MDBox display="flex" justifyContent="space-between" alignItems="center" sx={{
           gap:2, mb:3,
         }}>
-        <Button variant="outline-info" className="float-right">Register</Button>
+        <Button variant="outline-info" className="float-right" href={action.route}>Register</Button>
 
         </MDBox>
         </Tilt>
